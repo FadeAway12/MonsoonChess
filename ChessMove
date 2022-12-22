@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ChessMove {
+		
+	public static String getMove() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter your move (current pos then pos to move to).");
+		String move = input.nextLine();
+		Scanner check = new Scanner(move);
+		String moveFrom = check.next();
+		String moveTo = check.next();
+		return null;
+	}
+	
+	public static boolean checkLegal(String move) {
+		
+		ArrayList<String> listLegal = new ArrayList<String>();
+		return false;
+	}
+}
