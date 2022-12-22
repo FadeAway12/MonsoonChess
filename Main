@@ -1,10 +1,30 @@
-import javax.swing.ImageIcon;
+    import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Main {
 	public static void main(String args[]) {
 		ChessGame.fillBoard();
 		//ChessMove.getMove();
-		GenerateLegalMove.legalMoves();
+		while (ChessGame.moveNum<50) {
+			ChessMove.getMove();
+			ChessGame.moveNum++;
+			for (int i = 7; i>=0; i--) {
+				for (int k = 0; k<8; k++) {
+					System.out.print(ChessGame.board[i][k]);
+				}
+				System.out.println();
+			}
+			ChessMove.getMove();
+			ChessGame.moveNum++;
+			for (int i = 7; i>=0; i--) {
+				for (int k = 0; k<8; k++) {
+					System.out.print(ChessGame.board[i][k]);
+				}
+				System.out.println();
+			}
+		}
+		GenerateLegalMove.legalMoves(ChessGame.board, true);
 	}
 }
+
+    
