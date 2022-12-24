@@ -1,4 +1,4 @@
-import javax.swing.ImageIcon;
+    import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,7 +13,7 @@ public class ChessGUI extends JFrame {
 	public ChessGUI() {
 
 		setTitle("Monsoon Chess");
-		setSize(800, 800);
+		setSize(900, 900);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -39,6 +39,7 @@ public class ChessGUI extends JFrame {
 				}
 			}
 		}
+
 		for (int i = 7; i>=0; i--) {
 			for (int k = 0; k<8; k++) {
 				if (ChessGame.board[i][k] == 2) {
@@ -127,6 +128,91 @@ public class ChessGUI extends JFrame {
 				}
 			}
 		}
+		
+		//drawing row and column numbers
+		ImageIcon knight = new ImageIcon("A.jpeg");
+		Image img = knight.getImage();
+		Image imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		ImageIcon knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 0, 850, null);
+		knight = new ImageIcon("B image.png");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 100, 850, null);
+		knight = new ImageIcon("C image transparent.png");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 200, 850, null);
+		knight = new ImageIcon("D image transparent.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 300, 850, null);
+		knight = new ImageIcon("e image transparent.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 400, 850, null);
+		knight = new ImageIcon("f image transparent.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 500, 850, null);
+		knight = new ImageIcon("G.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 600, 850, null);
+		knight = new ImageIcon("H.png");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 700, 850, null);
+		
+		knight = new ImageIcon("1.png");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 850, 750, null);
+		knight = new ImageIcon("2.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 850, 650, null);
+		knight = new ImageIcon("3.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 850, 550, null);
+		knight = new ImageIcon("4.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 850, 450, null);
+		knight = new ImageIcon("5.png");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 850, 350, null);
+		knight = new ImageIcon("6.png");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 850, 250, null);
+		knight = new ImageIcon("7.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 850, 150, null);
+		knight = new ImageIcon("8.jpeg");
+		img = knight.getImage();
+		imgScale = img.getScaledInstance(70, 70, EXIT_ON_CLOSE);
+		knightSprite = new ImageIcon(imgScale);
+		g.drawImage(imgScale, 850, 50, null);
 	}
 	
 }
+
+    

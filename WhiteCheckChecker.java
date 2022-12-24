@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+    import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WhiteCheckChecker {
@@ -19,7 +19,9 @@ public class WhiteCheckChecker {
 			String move = legalMoves.get(i);
 			Scanner check = new Scanner(move);
 			String from = check.next();
-			String to = check.next();
+			String to = "";
+			if (check.hasNext())
+				to = check.next();
 			char coll = ChessGame.col.charAt(col);
 			
 			String kingPos = coll+""+(row+1);
@@ -54,9 +56,10 @@ public class WhiteCheckChecker {
 				list.add(n);
 			}
 		} 
-		System.out.println(list);
 		return list;
 	}
 }
+
+    
 
     

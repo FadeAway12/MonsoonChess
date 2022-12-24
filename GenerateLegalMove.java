@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+    import java.util.ArrayList;
 
 public class GenerateLegalMove {
 	public static ArrayList<String> legalMoves(int[][] board, boolean first) { //set boolean to TRUE if you're calling from the main to prevent stack overflow
@@ -47,7 +47,8 @@ public class GenerateLegalMove {
 		if (first && WhiteCheckChecker.whiteInCheck(ChessGame.board)) {
 			totalMoves = WhiteCheckChecker.filterValid(totalMoves);
 			if (totalMoves.size() == 0) { //remove if it doesnt work
-				System.out.println("CHECKMATE!"); //remove if it doesnt work
+				System.out.println("WHITE IS IN CHECKMATE!"); //remove if it doesnt work
+				ChessGame.whiteInCheckMate = true;
 			}
 		}
 		if (first &&!WhiteCheckChecker.whiteInCheck(ChessGame.board)) { //remove if it doesnt work
@@ -55,6 +56,15 @@ public class GenerateLegalMove {
 			if (totalMoves.size() == 0) {
 				System.out.println("STALEMATE!");
 			}
+		}
+		if (first && WhiteCastle.shortPathClear()) {
+			totalMoves.add("O-O");
+		}
+		if (first && WhiteCastle.longPathClear()) {
+			totalMoves.add("O-O-O");
+		}
+		for (String s : ChessGame.enPassantWhite) {
+			totalMoves.add(s);
 		}
 		return totalMoves;
 		
@@ -452,5 +462,7 @@ public class GenerateLegalMove {
 		return moves;
 	}*/
 }
+
+    
 
     

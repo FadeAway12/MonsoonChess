@@ -1,22 +1,20 @@
-    import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ChessMove {
-		
-	public static void getMove() {
-
-
-		boolean isLegal = false;
-		String move = "";
-		while (!isLegal) {
-			Scanner input = new Scanner(System.in);
-			System.out.println("Enter your move (current pos then pos to move to).");
-			move = input.nextLine();
-			isLegal = CheckLegal.checkLegal(move);
-			if (!isLegal) {
-				System.out.println("Please reinput the information.");
-			}
-		}
+public class GenerateBotMoves {
+	public static void chooseMoveBlack() {
+		ArrayList<String> moves = GenerateLegalMoveBlack.legalMoves(ChessGame.board, true);
+		int length = moves.size();
+		int random = (int)(Math.random()*(length));
+		executeMove(moves.get(random));
+	}
+	public static void chooseMoveWhite() {
+		ArrayList<String> moves = GenerateLegalMove.legalMoves(ChessGame.board, true);
+		int length = moves.size();
+		int random = (int)(Math.random()*(length));
+		executeMove(moves.get(random));
+	}
+	public static void executeMove(String move) {
 		Scanner check = new Scanner(move);
 		String from = check.next();
 		String to = "";
@@ -133,46 +131,6 @@ public class ChessMove {
 				}
 			}
 			ChessGame.board[row][col] = piece;
-			if (piece==1 && row == 7){
-				System.out.println("Promotion! Which piece would you like to promote to? (Q, B, K, R)");
-				Scanner input2 = new Scanner(System.in);
-				String choice = input2.next();
-				if (choice.equals("Q")) {
-					ChessGame.board[row][col] = 5;
-				}
-				if (choice.equals("R")) {
-					ChessGame.board[row][col] = 4;
-				}
-				if (choice.equals("B")) {
-					ChessGame.board[row][col] = 3;
-				}
-				if (choice.equals("K")) {
-					ChessGame.board[row][col] = 2;
-				}
-				
-			}
-			if (piece==-1 && row == 0){
-				System.out.println("Promotion! Which piece would you like to promote to? (Q, B, K, R)");
-				Scanner input2 = new Scanner(System.in);
-				String choice = input2.next();
-				input2.close();
-				if (choice.equals("Q")) {
-					ChessGame.board[row][col] = -5;
-				}
-				if (choice.equals("R")) {
-					ChessGame.board[row][col] = -4;
-				}
-				if (choice.equals("B")) {
-					ChessGame.board[row][col] = -3;
-				}
-				if (choice.equals("K")) {
-					ChessGame.board[row][col] = -2;
-				}
-				
-			}
-		}
 	}
 }
-    
-
-    
+}
