@@ -1,4 +1,6 @@
-    /**
+import java.util.ArrayList;
+
+/**
  * EACH square will be occupied by a piece represented by a char. Capital is white
  * 1 = pawn, 2 = knight, 3 = bishop, 4 = rook, 5 = queen, 6 = king, 0 = empty
  * Negative for black
@@ -11,11 +13,15 @@ public class ChessGame {
 	 * 0 1 2 3 4 5 6 7 = a b c d e f g h (cols)
 	 */
 	static String col = "abcdefgh";
+	static ArrayList<String> enPassantBlack = new ArrayList<String>();
+	static ArrayList<String> enPassantWhite = new ArrayList<String>();
 	static boolean isWhite;
-	static boolean whiteCanLongCastle;
-	static boolean blackCanLongCastle;
-	static boolean whiteCanShortCastle;
-	static boolean blackCanShortCastle;
+	static boolean whiteInCheckMate = false;
+	static boolean blackInCheckMate = false;
+	static boolean whiteCanLongCastle = true;
+	static boolean blackCanLongCastle = true;
+	static boolean whiteCanShortCastle = true;
+	static boolean blackCanShortCastle = true;
 	static boolean whiteChecked;
 	static boolean blackChecked;
 	static int moveNum = 1;
@@ -55,5 +61,7 @@ public class ChessGame {
 		}
 	}
 }
+
+    
 
     
