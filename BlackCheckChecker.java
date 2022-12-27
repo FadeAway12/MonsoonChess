@@ -32,13 +32,13 @@ public class BlackCheckChecker {
 		}
 		return checked;
 	}
-	public static ArrayList<String> filterValid(ArrayList<String> legalMoves) { //test if the resultant position from a black move puts the black king out of check (blocking, capturing, moving)
+	public static ArrayList<String> filterValid(ArrayList<String> legalMoves, int[][] board) { //test if the resultant position from a black move puts the black king out of check (blocking, capturing, moving)
 		ArrayList<String> list = new ArrayList<String>();
 		int[][] board2 = new int[8][8];
 		for (String n : legalMoves) {
 			for (int i = 0; i<8; i++) {
 				for (int k = 0; k<8; k++) {
-					board2[i][k] = ChessGame.board[i][k];
+					board2[i][k] = board[i][k];
 				}//making a copy of board array
 			}
 			Scanner check = new Scanner(n);

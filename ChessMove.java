@@ -5,7 +5,7 @@ public class ChessMove {
 		
 	public static void getMove() {
 
-
+		
 		boolean isLegal = false;
 		String move = "";
 		while (!isLegal) {
@@ -17,6 +17,7 @@ public class ChessMove {
 				System.out.println("Please reinput the information.");
 			}
 		}
+		PGNmaker.PGNMaker(move);
 		Scanner check = new Scanner(move);
 		String from = check.next();
 		String to = "";
@@ -155,7 +156,6 @@ public class ChessMove {
 				System.out.println("Promotion! Which piece would you like to promote to? (Q, B, K, R)");
 				Scanner input2 = new Scanner(System.in);
 				String choice = input2.next();
-				input2.close();
 				if (choice.equals("Q")) {
 					ChessGame.board[row][col] = -5;
 				}

@@ -45,15 +45,16 @@ public class GenerateLegalMove {
 			}
 		}
 		if (first && WhiteCheckChecker.whiteInCheck(ChessGame.board)) {
-			totalMoves = WhiteCheckChecker.filterValid(totalMoves);
+			totalMoves = WhiteCheckChecker.filterValid(totalMoves, ChessGame.board);
 			if (totalMoves.size() == 0) { //remove if it doesnt work
 				System.out.println("WHITE IS IN CHECKMATE!"); //remove if it doesnt work
 				ChessGame.whiteInCheckMate = true;
 			}
 		}
 		if (first &&!WhiteCheckChecker.whiteInCheck(ChessGame.board)) { //remove if it doesnt work
-			totalMoves = WhiteCheckChecker.filterValid(totalMoves);
+			totalMoves = WhiteCheckChecker.filterValid(totalMoves, ChessGame.board);
 			if (totalMoves.size() == 0) {
+				ChessGame.stalemate = true;
 				System.out.println("STALEMATE!");
 			}
 		}

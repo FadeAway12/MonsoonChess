@@ -12,12 +12,14 @@ public class ChessGame {
 	 * 0, 1, 2, 3, 4, 5, 6, 7 = 1 2 3 4 5 6 7 8 (rows)
 	 * 0 1 2 3 4 5 6 7 = a b c d e f g h (cols)
 	 */
+	static String PGN = "";
 	static String col = "abcdefgh";
 	static ArrayList<String> enPassantBlack = new ArrayList<String>();
 	static ArrayList<String> enPassantWhite = new ArrayList<String>();
 	static boolean isWhite;
 	static boolean whiteInCheckMate = false;
 	static boolean blackInCheckMate = false;
+	static boolean stalemate = false;
 	static boolean whiteCanLongCastle = true;
 	static boolean blackCanLongCastle = true;
 	static boolean whiteCanShortCastle = true;
